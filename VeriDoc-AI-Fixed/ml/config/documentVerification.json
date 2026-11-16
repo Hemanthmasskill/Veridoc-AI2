@@ -1,0 +1,113 @@
+{
+  "_comment": "VeriDoc pipeline thresholds & evidence weights. Calibrate on a validation set; do not hard-code magic numbers in code. See README section 'Threshold calibration'.",
+  "version": 3,
+  "verification_mode": "strict",
+  "strictness": {
+    "strict": {
+      "verified_min": 0.72,
+      "verified_require_image_pass": true,
+      "warnings_with_one_high_for_suspicious": 1
+    },
+    "balanced": {
+      "verified_min": 0.68,
+      "verified_require_image_pass": false,
+      "warnings_with_one_high_for_suspicious": 2
+    }
+  },
+  "image_quality": {
+    "pass": 0.65,
+    "review": 0.42,
+    "weights": {
+      "resolution": 0.2,
+      "blur": 0.3,
+      "brightness": 0.15,
+      "contrast": 0.2,
+      "glare": 0.15
+    }
+  },
+  "classification": {
+    "confident": 0.12,
+    "margin": 0.05
+  },
+  "ocr": {
+    "pass": 0.6,
+    "review": 0.35
+  },
+  "tamper": {
+    "review": 0.55
+  },
+  "cross_field": {
+    "tolerance_pct": 1.5,
+    "tolerance_marks": 2
+  },
+  "decision": {
+    "verified_min": 0.7,
+    "review_min": 0.4,
+    "require_ocr_for_verified": 0.5
+  },
+  "evidence_weights": {
+    "aadhaar": {
+      "ocr": 0.18,
+      "structure": 0.24,
+      "semantic": 0.14,
+      "cross_field": 0.18,
+      "tamper": 0.08,
+      "image_quality": 0.08,
+      "fabrication": 0.1
+    },
+    "pan": {
+      "ocr": 0.18,
+      "structure": 0.24,
+      "semantic": 0.14,
+      "cross_field": 0.18,
+      "tamper": 0.08,
+      "image_quality": 0.08,
+      "fabrication": 0.1
+    },
+    "passport": {
+      "ocr": 0.14,
+      "structure": 0.18,
+      "semantic": 0.1,
+      "cross_field": 0.32,
+      "tamper": 0.08,
+      "image_quality": 0.08,
+      "fabrication": 0.1
+    },
+    "driving_licence": {
+      "ocr": 0.18,
+      "structure": 0.24,
+      "semantic": 0.14,
+      "cross_field": 0.18,
+      "tamper": 0.08,
+      "image_quality": 0.08,
+      "fabrication": 0.1
+    },
+    "marksheet": {
+      "ocr": 0.14,
+      "structure": 0.18,
+      "semantic": 0.14,
+      "cross_field": 0.28,
+      "tamper": 0.08,
+      "image_quality": 0.08,
+      "fabrication": 0.1
+    },
+    "certificate": {
+      "ocr": 0.18,
+      "structure": 0.2,
+      "semantic": 0.14,
+      "cross_field": 0.18,
+      "tamper": 0.08,
+      "image_quality": 0.12,
+      "fabrication": 0.1
+    },
+    "generic": {
+      "ocr": 0.22,
+      "structure": 0.18,
+      "semantic": 0.12,
+      "cross_field": 0.1,
+      "tamper": 0.12,
+      "image_quality": 0.16,
+      "fabrication": 0.1
+    }
+  }
+}
